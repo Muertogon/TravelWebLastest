@@ -1,6 +1,496 @@
-{% extends "base.html" %}
+{% extends "base.html" %} 
+{% block begin %}
+<link
+  href="https://fonts.googleapis.com/css?family=Varela+Round"
+  rel="stylesheet"
+/>
+<link
+  href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+  rel="stylesheet"
+/>
+<link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles2.css') }}" />
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+/>
+<script
+  src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"
+  crossorigin="anonymous"
+></script>
+{% endblock %} 
 
-{% block content %}Nature{% endblock %}
+{% block content %}Nature{% endblock %} 
+
 {% block content2 %}
-<h1>Nature</h1>
+
+<section class="m-lg-5 p-md-2 d-flex justify-content-center">
+  <div class="row">
+    <div
+      class="card m-md-5"
+      style="
+        width: 650px;
+        height: 750px;
+        border-color: rgba(255, 255, 255, 0.9);
+      "
+    >
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/nature/angel falls.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Angel falls</h5>
+        <p class="card-text">
+          The common Spanish name Salto Ángel derives from his surname. In 2009,
+          President Hugo Chávez announced his intention to change the name to
+          the purported original indigenous Pemon term ("Kerepakupai Vená",
+          meaning "waterfall of the deepest place"), on the grounds that the
+          nation's most famous landmark should bear an indigenous name.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Las Claritas") }}°C</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card m-md-5" style="width: 650px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/nature/aurora australis.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Aurora australis</h5>
+        <p class="card-text">
+          The Northern Lights have been described as a 'celestial ballet of
+          light dancing across the night sky.' Many have made the pilgrimage to
+          Norway and the like, to sit beneath the Arctic sky in hopeful wonder.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">IDK°C</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="m-lg-5 p-md-2 d-flex justify-content-center">
+  <div class="row">
+    <div class="card m-md-5" style="width: 650px; height: 750px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img//nature/blyde river.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Blyde river</h5>
+        <p class="card-text">
+          The Blyde River Canyon in South Africa is known for its unique
+          geology, including the Pinnacle, a looming quartzite column. Blyde
+          River Canyon sits at an elevation of more than 2,600 feet. This canyon
+          also boasts diverse flora and fauna.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Mokopane") }}°C</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card m-md-5" style="width: 650px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/nature/chinas stone.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Chinas stone</h5>
+        <p class="card-text">
+          China's Stone Forest is 270 million years old. As the name implies,
+          this is basically a 150-square mile forest made of stone. The giant,
+          otherworldly pillars are ancient karst formations, created by water
+          and wind erosion, as well as seismic activity. The forest also
+          features caves, waterfalls, ponds, and lakes, as well as an
+          underground river.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Kunming") }}°C</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="m-lg-5 p-md-2 d-flex justify-content-center">
+  <div class="row">
+    <div class="card m-md-5" style="width: 650px; height: 750px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/nature/dead.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">The Dead Sea</h5>
+        <p class="card-text">
+          The Dead Sea, in Israel and Jordan, is the perfect spot for floating.
+          Sitting at 1,410 feet below sea level, the Dead Sea is the lowest body
+          of water on Earth's surface. Located in a desert and featuring a high
+          concentration of salt, it's easy for visitors to float.The water is
+          beautiful enough on its own, but the deposits and columns of salt that
+          rise out of the water give it a unique, otherworldly look.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Jerusalem") }}°C</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card m-md-5" style="width: 650px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/nature/fairy pools.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Fairy pools</h5>
+        <p class="card-text">
+          The Fairy Pools are incredibly clear pools on the Isle of Skye,
+          Scotland. Skye's enchanting Fairy Pools are only accessible on foot
+          via the Glen Brittle forest.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Dunvegan") }}°C</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="m-lg-5 p-md-2 d-flex justify-content-center">
+  <div class="row">
+    <div class="card m-md-5" style="width: 650px; height: 750px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img//nature/ha long bay.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Ha long bay</h5>
+        <p class="card-text">
+          Ha Long Bay in Vietnam is a UNESCO World Heritage site. The best way
+          to see Ha Long's awe-inspiring limestone towers is by boat. In fact,
+          many tourists stay overnight on a boat in the bay.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Ha Long") }}°C</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card m-md-5" style="width: 650px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/nature/iguazu falls.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Iguazu falls</h5>
+        <p class="card-text">
+          Iguazu Falls is an awe-inspiring sight in Argentina and Brazil.
+          Spanning Argentina and Brazil, the Iguazu Falls are part of a massive
+          waterfall system that totals around 275 waterfalls.
+        </p>
+
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Puerto Iguazu") }}°C</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="m-lg-5 p-md-2 d-flex justify-content-center">
+  <div class="row">
+    <div class="card m-md-5" style="width: 650px; height: 750px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/nature/kjeragbolten.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Kjeragbolten</h5>
+        <p class="card-text">
+          Kjeragbolten is a 177-cubic-foot boulder nestled in a mountain crevice
+          in Norway. The boulder is surprisingly accessible (you don't need
+          special equipment to reach it), which makes it a popular photo op for
+          adventurous Instagrammers.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Stavanger") }}°C</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card m-md-5" style="width: 650px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/nature/maldives.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Maldives</h5>
+        <p class="card-text">
+          The Maldives' Bioluminescent Beaches light up the night sky. The
+          gypsum that forms these gently sloping dunes comes from a nearby
+          ephemeral lake that has a high mineral content. As the water from this
+          lake evaporates, minerals remain, which then form gypsum deposits that
+          are carried by the wind.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Maldives") }}°C</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="m-lg-5 p-md-2 d-flex justify-content-center">
+  <div class="row">
+    <div class="card m-md-5" style="width: 650px; height: 750px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img//nature/marblecaves.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Marble Caves</h5>
+        <p class="card-text">
+          The stunning colors of the Marble Caves in Chile vary as water levels
+          fluctuate throughout the year. Located in Patagonia on Lake General
+          Carrera, Chile's Marble Caves (also known as the "Marble Cathedral")
+          were created more than 6,000 years ago by waves that eroded the rocks.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Perito Moreno") }}°C</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card m-md-5" style="width: 650px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/nature/masazir.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Masazir</h5>
+        <p class="card-text">
+          Masazir Lake in Azerbaijan has a pink color that's strongest in the
+          summer. Masazir Lake is not far from Baku, the capital of Azerbaijan.
+          This pink saline lake gets its color from microorganisms called
+          halophiles.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Baku") }}°C</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="m-lg-5 p-md-2 d-flex justify-content-center">
+  <div class="row">
+    <div class="card m-md-5" style="width: 650px; height: 750px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/nature/mountfuji.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Mount Fuji</h5>
+        <p class="card-text">
+          Mount Fuji in Honshu, Japan, is an active volcano, last erupting in
+          1707. Japan's tallest mountain (12,388 feet high) towers over the
+          nearby countryside, which is often enveloped in a thick layer of fog.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Fujinomiya") }}°C</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card m-md-5" style="width: 650px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/nature/reynisfjara.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Reynisfjara</h5>
+        <p class="card-text">
+          Reynisfjara Beach in Vik, Iceland, looks otherworldly thanks to its
+          black sand, basalt stone columns, and the fog that sometimes envelops
+          it. You probably won't want to sunbathe on Reynisfjara, but that
+          doesn't mean it's not worth a visit. If you're lucky, you might even
+          catch a glimpse of the Northern Lights.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Holt") }}°C</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="m-lg-5 p-md-2 d-flex justify-content-center">
+  <div class="row">
+    <div class="card m-md-5" style="width: 650px; height: 750px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/nature/rugged cliffs.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Rugged cliffs</h5>
+        <p class="card-text">
+          The rugged Cliffs of Moher in County Clare, Ireland, offer
+          unparalleled views of the ocean below. One of Ireland's most-visited
+          natural attractions, the Cliffs of Moher stretch along the country's
+          west coast for five majestic miles.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Lahinch") }}°C</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card m-md-5" style="width: 650px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/nature/skogafoss.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Skogafoss</h5>
+        <p class="card-text">
+          At Skógafoss in Skógar, Iceland, the heavy amount of spray that the
+          waterfall produces makes a sunny-day rainbow sighting very likely.
+          Skógafoss flows from not one, but two glaciers (Eyjafjallajokull and
+          Myrdalsjokull). According to legend, a viking named Thrasi hid his
+          chest of gold under this stunning waterfall.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Holt") }}°C</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="m-lg-5 p-md-2 d-flex justify-content-center">
+  <div class="row">
+    <div class="card m-md-5" style="width: 650px; height: 750px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/nature/tegalalang.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Tegalalang</h5>
+        <p class="card-text">
+          Tegalalang Rice Terrace in Indonesia offers a vibrant green landscape
+          with towering palm trees. Indonesia is known for its terraced rice
+          fields — and Tegalalang is one of the most well-known. Farmers here
+          use an irrigation system that's been passed down for centuries.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Tegalalang") }}°C</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card m-md-5" style="width: 650px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/nature/tianmen.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Tianmen</h5>
+        <p class="card-text">
+          Tianmen Cave in Zhangjiajie, China, is one of the highest naturally
+          formed arches on the planet. Visitors have to mount a 999-step
+          "stairway to heaven" to reach the site, which is situated 5,000 feet
+          above sea level.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Tianmen") }}°C</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="m-lg-5 p-md-2 d-flex justify-content-center">
+  <div class="row">
+    <div class="card m-md-5" style="width: 650px; height: 750px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/nature/tianzi.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Tianzi</h5>
+        <p class="card-text">
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Tianzi") }}°C</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card m-md-5" style="width: 650px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/nature/waitomo.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Waitomo Glowworm Caves</h5>
+        <p class="card-text">
+          Waitomo Glowworm Caves in New Zealand is home to thousands of
+          twinkling glow worms. The caves have been open to the public since
+          1889, but known to the indigenous Maori people for much longer. In
+          fact, Waitomo comes from the Maori words wai, for water, and tomo, for
+          hole or entrance. The magical experience is heightened by the fact
+          that visitors silently glide through the caves by gondola.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Otorohanga") }}°C</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="js/scripts2.js"></script>
 {% endblock %}

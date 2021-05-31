@@ -1,16 +1,465 @@
-{% extends "base.html" %}
-
-{% block content %}Cities{% endblock %}
+{% extends "base.html" %} 
+{% block begin %}
+<link
+  href="https://fonts.googleapis.com/css?family=Varela+Round"
+  rel="stylesheet"
+/>
+<link
+  href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+  rel="stylesheet"
+/>
+<link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles2.css') }}" />
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+/>
+<script
+  src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"
+  crossorigin="anonymous"
+></script>
+{% endblock %} 
+{% block content %}Cities{% endblock %} 
 {% block content2 %}
-{% for x in water %}
-<div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-        <div class="card-text">
-            <p>itadakimasu bnerac</p>
-            <p>{{ x }}</p>
+<section class="m-lg-5 p-md-2 d-flex justify-content-center">
+  <div class="row">
+    <div
+      class="card m-md-5"
+      style="
+        width: 650px;
+        height: 750px;
+        border-color: rgba(255, 255, 255, 0.9);
+      "
+    >
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/Cities/Amstardam.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Amsterdam, The Netherlands</h5>
+        <p class="card-text">
+          In between taking in the city's canals and characteristic tulips,
+          visitors should see the Anne Frank house and the Van Gogh Museum.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Amsterdam") }}°C</div>
         </div>
+      </div>
     </div>
-</div>
-{% endfor %}
+
+    <div class="card m-md-5" style="width: 650px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/Cities/Barcelona.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Barcelona, Spain</h5>
+        <p class="card-text">
+          Architect Antoni Gaudí left his mark on Barcelona, designing the La
+          Sagrada Familia, Park Güell, Casa Milà, Casa Batlló, and other
+          buildings people come from all over the world to see.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Barcelona") }}°C</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="m-lg-5 p-md-2 d-flex justify-content-center">
+  <div class="row">
+    <div class="card m-md-5" style="width: 650px; height: 750px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/Cities/Bergen.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Bergen, Norway</h5>
+        <p class="card-text">
+          Bergen is a UNESCO World Heritage Site for a reason, with its colorful
+          houses and mountain views. The mountain goats on Mount Fløyen add to
+          the scenic charm.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Bergen") }}°C</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card m-md-5" style="width: 650px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/Cities/Berlin.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Berlin, Germany</h5>
+        <p class="card-text">
+          Berlin features an eclectic mix of historic and modern buildings. The
+          Holocaust Memorial and the Reichstag building are among the most
+          impactful stops.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Berlin") }}°C</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="m-lg-5 p-md-2 d-flex justify-content-center">
+  <div class="row">
+    <div class="card m-md-5" style="width: 650px; height: 750px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/Cities/Dubai.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Dubai, United Arab Emirates</h5>
+        <p class="card-text">
+          Dubai's futuristic skyline features the tallest building in the world,
+          the Burj Khalifa. Watersports at Kite Beach and desert camel rides can
+          also be accessed via the busy metropolis.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Dubai") }}°C</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card m-md-5" style="width: 650px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/Cities/HongKong.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Hong Kong</h5>
+        <p class="card-text">
+          Victoria Peak is the best lookout spot to see the full extent of the
+          city, and Hong Kong's light show on Victoria Harbour is unparalleled.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Hong Kong") }}°C</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="m-lg-5 p-md-2 d-flex justify-content-center">
+  <div class="row">
+    <div class="card m-md-5" style="width: 650px; height: 750px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/Cities/Jaipur.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Jaipur, Rajasthan, India</h5>
+        <p class="card-text">
+          Jaipur is also known as the "Pink City" for its colorful palaces. Tour
+          Amber Palace, the Palace of the Winds, and the City Palace for the
+          best of the city's architecture.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Jaipur") }}°C</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card m-md-5" style="width: 650px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/Cities/london.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">London, England, UK</h5>
+        <p class="card-text">
+          Towering symbols of London include Big Ben, the London Eye, and, of
+          course, Buckingham Palace. The city's iconic Notting Hill neighborhood
+          is also instantly recognizable with its pastel-colored buildings.
+        </p>
+
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("London") }}°C</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="m-lg-5 p-md-2 d-flex justify-content-center">
+  <div class="row">
+    <div class="card m-md-5" style="width: 650px; height: 750px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/Cities/New York.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">New York, USA</h5>
+        <p class="card-text">
+          New York City offers an endless variety of historical, cultural, and
+          natural wonders, from the Statue of Liberty to Central Park to the
+          legendary Broadway theater district.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("New York") }}°C</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card m-md-5" style="width: 650px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/Cities/Paris.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Paris, France</h5>
+        <p class="card-text">
+          The Eiffel Tower. Le Louvre. Arc de Triomphe. Champs-Élysées. Palace
+          of Versailles. Need we say more?
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Paris") }}°C</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="m-lg-5 p-md-2 d-flex justify-content-center">
+  <div class="row">
+    <div class="card m-md-5" style="width: 650px; height: 750px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/Cities/Queenstown.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Queenstown, New Zealand</h5>
+        <p class="card-text">
+          Queenstown's sweeping mountain and ocean views are world-renowned.
+          Thrill-seekers can enjoy the scenery via skydiving or bungee jumping.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Queenstown") }}°C</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card m-md-5" style="width: 650px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/Cities/Quito.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Quito, Ecuador</h5>
+        <p class="card-text">
+          At La Mitad del Mundo, visitors can stand with one foot in each
+          hemisphere at the equator. The church of Compañia de Jesús Jesuit and
+          the active Pichincha volcano are also wonders worth seeing.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Quito") }}°C</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="m-lg-5 p-md-2 d-flex justify-content-center">
+  <div class="row">
+    <div class="card m-md-5" style="width: 650px; height: 750px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/Cities/Rio de Janeiro.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Rio de Janeiro, Brazil</h5>
+        <p class="card-text">
+          Among Rio de Janeiro's most famous sites are the 98-foot Christ the
+          Redeemer statue overlooking the city, Sugarloaf Mountain (accessible
+          by cable car), the annual Carnival, and popular beaches.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Rio de Janeiro") }}°C</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card m-md-5" style="width: 650px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/Cities/Rome.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Rome, Italy</h5>
+        <p class="card-text">
+          When in Rome, the Colosseum, Trevi Fountain, and St. Peter's Basilica
+          are essential stops. Plus, anywhere that sells gelato.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Rome") }}°C</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="m-lg-5 p-md-2 d-flex justify-content-center">
+  <div class="row">
+    <div class="card m-md-5" style="width: 650px; height: 750px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/Cities/San Francisco.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">San Francisco, California</h5>
+        <p class="card-text">
+          San Francisco is full of world-famous tourist sites, including the
+          Golden Gate Bridge, Alcatraz Island, Fisherman's Wharf, and the sea
+          lions at Pier 39.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("San Francisco") }}°C</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card m-md-5" style="width: 650px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/Cities/Seoul.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Seoul, South Korea</h5>
+        <p class="card-text">
+          Between the royal palace of Changdeokung and the downtown district
+          full of neon lights and street food, Seoul's cultural contrasts blend
+          together seamlessly.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Seoul") }}°C</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="m-lg-5 p-md-2 d-flex justify-content-center">
+  <div class="row">
+    <div class="card m-md-5" style="width: 650px; height: 750px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/Cities/Sydney.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Sydney, Australia</h5>
+        <p class="card-text">
+          The Sydney Opera House is the most recognizable of the city's
+          landmarks, but the Royal Botanic Gardens, Bondi Beach, and Harbor
+          Bridge are also worthwhile attractions.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Sydney") }}°C</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card m-md-5" style="width: 650px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/Cities/Tokyo.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Tokyo, Japan</h5>
+        <p class="card-text">
+          The ancient Sensō-ji Temple is the oldest temple in Tokyo, and it is
+          surrounded by seasonal cherry blossoms. For the freshest sushi, visit
+          the Tsukiji fish market, which is famous for its tuna auctions.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Tokyo") }}°C</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="m-lg-5 p-md-2 d-flex justify-content-center">
+  <div class="row">
+    <div class="card m-md-5" style="width: 650px; height: 750px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/Cities/Vancouver.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Vancouver, Canada</h5>
+        <p class="card-text">
+          If you don't have the stomach for the 200-foot-high Capilano
+          Suspension Bridge, Granville Island Public Market and the English Bay
+          offer entertainment at sea level.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Vancouver") }}°C</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card m-md-5" style="width: 650px">
+      <img
+        class="card-img-top"
+        style="height: 450px"
+        src="/static/assets/img/Cities/Venice.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Venice, Italy</h5>
+        <p class="card-text">
+          Gondola rides through Venice's many canals are a no-brainer for any
+          traveler. St. Mark's Square and the Rialto Bridge also make for
+          romantic destinations.
+        </p>
+        <div class="d-flex flex-row-reverse">
+          <div class="weather">{{ whatCity("Venice") }}°C</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="js/scripts2.js"></script>
 {% endblock %}

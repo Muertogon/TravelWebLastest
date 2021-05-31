@@ -1,0 +1,55 @@
+ section div{
+   font-family: 'Varela Round', sans-serif;
+   
+}
+section div div img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+   
+}
+
+.rounded {
+    border-radius: 8px !important;
+    cursor: pointer;
+}
+
+.img-fluid {
+    width: 100%;
+}
+
+.card-wrapper .card-rotating {
+    height: auto;
+}
+
+.face.back {
+    height: auto;
+}
+
+.grey-text {
+    color: grey;
+}
+
+/* Cities.html */
+
+/* Nature.html */
+
+.weather{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    border: solid 1px black;
+    border-radius: 25px;
+}
+.background{
+
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 100%, rgba(0, 0, 0, 0.7) 75%, #000000 0%),
+    url("/static/assets/img/NatureBG.jpg") no-repeat center center fixed
+   
+    
+}
+
+
+

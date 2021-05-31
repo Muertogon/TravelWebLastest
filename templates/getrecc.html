@@ -1,13 +1,29 @@
 {% extends "base.html" %}
+{% block begin%} 
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles2.css') }}"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+{% endblock %}
 
-{% block content %}eeee{% endblock %}
+{% block content %}Get Recommendations{% endblock %}
+
 {% block content2 %}
-<form method="post" action="#">
-    <div class="mb-3">
-      <label for="yee" class="form-label">Enter your city</label>
-      <input type="text" name="nm" class="form-control" id="yee" aria-describedby="help">
-      <div id="help" class="form-text">You'll get place recommendations</div>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+<div class="background">
+  <div style="height: 200px;"></div>
+  <div class="container" id="gooood">
+    <form method="post" action="#" class="text-white">
+        <div class="form-group">
+          <label for="City" class="form-label">Enter your city</label>
+          <input type="text" name="nm" class="form-control" id="City" aria-describedby="help">
+          <small id="CityHelp" class="form-text text-white">You'll get place recommendations</small>
+        </div>
+        <div class="form-group">
+          <label for="travel" class="form-label" placeholder="Km">How far are you willing to travel (kilometers)</label>
+          <input type="number" name="howMuch" class="form-control" id="travel" aria-describedby="help2">
+        </div>
+        <button type="submit" class="btn btn-primary">Proceed</button>
+    </form>
+  </div>
+  <div style="height: 500px;"></div>
+</div>
 {% endblock %}
